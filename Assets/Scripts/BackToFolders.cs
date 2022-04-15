@@ -22,7 +22,12 @@ public class BackToFolders : MonoBehaviour
     }
     public void OnArrowPointerExit()
     {
-        imageComponent.sprite = hoverArrow;
+        imageComponent.sprite = defaultArrow;
+    }
+
+    public void OnArrowPointerDown()
+    {
+        imageComponent.sprite = selectedArrow;
     }
 
 }

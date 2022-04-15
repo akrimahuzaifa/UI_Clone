@@ -7,6 +7,11 @@ public class Logout : MonoBehaviour
 {
     public void Logoutbuttonfunctionality()
     {
-        SceneManager.LoadScene(0);
+        if (SceneManager.GetActiveScene().buildIndex != 0)
+        {
+            SceneManager.LoadScene(0);
+        }
+        
     }
+    
 }

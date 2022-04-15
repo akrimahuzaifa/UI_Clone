@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class FolderActions : MonoBehaviour
 {
@@ -64,6 +65,6 @@ public class FolderActions : MonoBehaviour
     }
     public void OnFolderOpen()
     {
-        
+        SceneManager.LoadScene(2);
     }
 }
