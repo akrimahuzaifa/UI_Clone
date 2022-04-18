@@ -19,6 +19,7 @@ public class FolderDestroyer : MonoBehaviour
             lastChildObject = folderPanel.transform.GetChild(lastChildIndex).gameObject;
             Destroy(lastChildObject);
             FindObjectOfType<FolderInstantiator>().folderNumber--;
+            DataBase.folderCount--;
         }
     }
 }

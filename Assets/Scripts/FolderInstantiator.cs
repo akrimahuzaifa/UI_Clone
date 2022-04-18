@@ -10,16 +10,27 @@ public class FolderInstantiator : MonoBehaviour
     [HideInInspector] public GameObject folderHolder;
     public int folderNumber = 1;
 
-    float posX = 96.3f;
-    float posY = 362.2f;
+    private void Start()
+    {
+        if (DataBase.folderCount != 0)
+        {
+            for (int i = 0; i < DataBase.folderCount; i++)
+            {
+                ValuesFromDatabaseFolder();
+            }
+        }
+    }
+
 
     public void OnClickInstantiatorAddFolder()
-    {      
+    {
+        ValuesFromDatabaseFolder();
+        DataBase.folderCount++;
+    }
+    public void ValuesFromDatabaseFolder()
+    {
         folderHolder = Instantiate(folderPrefab, folderPanel.transform);
-        folderHolder.transform.position = new Vector3(posX, posY, 0);
         folderHolder.GetComponentInChildren<Text>().text = "Folder " + folderNumber;
-        posX += 50f;
         folderNumber++;
-        Debug.Log(folderPanel.transform.childCount);
     }
 }
