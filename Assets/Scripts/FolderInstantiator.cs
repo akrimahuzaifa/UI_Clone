@@ -21,7 +21,6 @@ public class FolderInstantiator : MonoBehaviour
         }
     }
 
-
     public void OnClickInstantiatorAddFolder()
     {
         ValuesFromDatabaseFolder();

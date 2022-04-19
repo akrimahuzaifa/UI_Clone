@@ -17,6 +17,7 @@ public class MouseActionsController : MonoBehaviour
     Image gameObjectImage;
     
     int dan;
+    //int train;
     
     void Start()
     {
@@ -87,4 +88,18 @@ public class MouseActionsController : MonoBehaviour
         }
         SelectedObj();
     }
+
+/*    public void OnClickHidePanel()
+    {
+        if (gameObject.name == "AddTrain")
+        {
+            train = 0;
+            //FindObjectOfType<FolderInstantiator>().OnClickInstantiatorAddFolder();
+        }
+        if (gameObject.name == "DeleteTrain")
+        {
+            train = 1;
+        }
+    }*/
+    
 }
