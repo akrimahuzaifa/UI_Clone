@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class FolderOptionsInstantiator : MonoBehaviour
 {
@@ -8,6 +9,7 @@ public class FolderOptionsInstantiator : MonoBehaviour
     public GameObject folderOptionsPanel;
     [HideInInspector] public GameObject folderOptionsHolder;
     [HideInInspector] public float posY;
+    GameObject userNameObj;
 
     private void Start()
     {
@@ -17,6 +19,12 @@ public class FolderOptionsInstantiator : MonoBehaviour
             for(int i = 0; i < DataBase.detailOptionCount; i++)
             {
                 ValuesFromDatabaseOptions();
+                if(i == DataBase.detailOptionCount - 1)
+                {
+                    //Debug.Log("SAVED: " + Save.userNameToTransfer);
+                    userNameObj = folderOptionsHolder.transform.GetChild(0).gameObject;
+                    userNameObj.GetComponent<Text>().text = DataBase.username; //Save.userNameToTransfer;
+                }
             }
         }
 

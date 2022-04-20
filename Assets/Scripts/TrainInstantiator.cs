@@ -9,10 +9,11 @@ public class TrainInstantiator : MonoBehaviour
     public GameObject bogiPrefab;
     public GameObject trainPanel;
     [HideInInspector] public GameObject trainHolder;
-    List<GameObject> trainList = new List<GameObject>();
+    [SerializeField] InputField inputFieldToHold;
 
     public float posX = 94.5f + 115f;
     float posY = 579.6f + 90f;
+    public static float diff = 250f;
     
     private void Start()
     {
@@ -22,6 +23,10 @@ public class TrainInstantiator : MonoBehaviour
             {
                 ValuesFromDatabaseTrain();
             }
+        }
+        if (DataBase.username != null)
+        {
+            inputFieldToHold.text = DataBase.username;
         }
     }
 
@@ -36,27 +41,13 @@ public class TrainInstantiator : MonoBehaviour
         {
             trainHolder = Instantiate(enginePrefab, trainPanel.transform);
             trainHolder.transform.position = new Vector3(posX, posY, 0);
-            //trainList.Add(Instantiate(enginePrefab, trainPanel.transform));
-            //trainList[0].transform.position = new Vector3(posX + 10f, posY, 0);
-            //Debug.Log(trainList[0].transform.position);
-            posX += 300f;
+            posX += diff;
         }
         else
         {
             trainHolder = Instantiate(bogiPrefab, trainPanel.transform);
             trainHolder.transform.position = new Vector3(posX, posY, 0);
-            /*            trainList.Add(Instantiate(bogiPrefab, trainPanel.transform));
-
-                        for (int i = 1; i < trainList.Count; i++)
-                        {
-
-                            trainList[i].transform.position = new Vector3(posX, posY, 0);
-
-                            //Debug.Log(trainList[0].transform.position);
-                        }*/
-            posX += 300f;
-
-        }
-        
+            posX += diff;
+        }  
     }
 }

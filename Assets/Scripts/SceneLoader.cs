@@ -11,4 +11,9 @@ public class SceneLoader : MonoBehaviour
     {
         SceneManager.LoadScene(1);
     }
+    
+    public void LoadSceneSenerioCreator()
+    {
+        SceneManager.LoadScene(2);
+    }
 }

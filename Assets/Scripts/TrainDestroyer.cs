@@ -19,7 +19,7 @@ public class TrainDestroyer : MonoBehaviour
             int lastChildIndex = trainPanel.transform.childCount - 1;
             lastChildObj = trainPanel.transform.GetChild(lastChildIndex).gameObject;
             Destroy(lastChildObj);
-            FindObjectOfType<TrainInstantiator>().posX -= 300f;
+            FindObjectOfType<TrainInstantiator>().posX -= TrainInstantiator.diff;
             DataBase.trainCount--;
         }
     }
